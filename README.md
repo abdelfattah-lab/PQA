@@ -1,17 +1,7 @@
 # PQA
 
-Target device: DE10-Agilex board rev C, B2E2_8GBx4
+This is the code for the paper "PQA: Exploring the Potential of Product Quantization in DNN Hardware Acceleration".
 
-Quartus version: Intel Quartus Prime Pro Edition 21.2
+Please see [hardware](hardware/README.md) for hardware compilation instructions.
 
-OpenCL version: Intel FPGA SDK for OpenCL Pro Edition 21.2
-
-Ubuntu version: Ubuntu 20.04.6 LTS
-
-## Compile for hardware
-To compile the design, first modify the design parameters in `hardware/inc/config.h` and `hardware/inc/device.h` to your desired values.
-
-Run the following command: 
-`aoc device/pq_basic.cl -o bin/pq_basic.aocx -board=B2E2_8GBx4 -v -clock=500MHz -parallel=16 -I $INTELFPGAOCLSDKROOT/include/kernel_headers`
-
-Note that the compilation will take a few hours. 
+Please see [analytical_model](analytical_model/README.md) for analytical model instructions.
