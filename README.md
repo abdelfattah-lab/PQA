@@ -1,9 +1,12 @@
 # PQA
 
-Target device: DE10-Agilex board rev C
+Target device: DE10-Agilex board rev C, B2E2_8GBx4
+
 Quartus version: Intel Quartus Prime Pro Edition 21.2
+
 OpenCL version: Intel FPGA SDK for OpenCL Pro Edition 21.2
-Ubuntu version: Ubuntu 20.04.4 LTS
+
+Ubuntu version: Ubuntu 20.04.6 LTS
 
 ## Compile for hardware
 To compile the design, first modify the design parameters in `hardware/inc/config.h` and `hardware/inc/device.h` to your desired values.
