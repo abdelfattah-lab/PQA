@@ -1,0 +1,64 @@
+#!/bin/bash
+
+aoc -march=emulator -v device/pq_basic.cl -o bin/pq_basic.aocx -I $INTELFPGAOCLSDKROOT/include/kernel_headers 
+
+export LD_LIBRARY_PATH=$AOCL_BOARD_PACKAGE_ROOT/linux64/lib:$INTELFPGAOCLSDKROOT/host/linux64/lib:$AOCL_BOARD_PACKAGE_ROOT/tests/extlibs/lib
+export PATH=/usr/sbin:/usr/bin:/sbin:/bin:$QUARTUS_ROOTDIR/bin:$INTELFPGAOCLSDKROOT/linux64/bin:$INTELFPGAOCLSDKROOT/bin:$INTELFPGAOCLSDKROOT/host/linux64/bin:$QSYS_ROOTDIR/bin:$INTELFPGAOCLSDKROOT/llvm/aocl-bin
+
+make
+pushd .
+cd test
+g++ -g -Wall test.cpp -o test 
+popd
+
+pushd .
+cd ~/../../media/samssdrive/intelFPGA_pro/21.2/hls
+source init_hls.sh
+popd
+
+
+
+./test/test 0 basic
+bin/host -emulator
+
+./test/test 0 numerate
+bin/host -emulator
+
+./test/test 0 random
+bin/host -emulator
+
+./test/test 0 random
+bin/host -emulator
+
+./test/test 0 random
+bin/host -emulator
+
+./test/test 1 basic
+bin/host -emulator
+
+./test/test 1 numerate
+bin/host -emulator
+
+./test/test 1 random
+bin/host -emulator
+
+./test/test 1 random
+bin/host -emulator
+
+./test/test 1 random
+bin/host -emulator
+
+./test/test 2 basic
+bin/host -emulator
+
+./test/test 2 numerate
+bin/host -emulator
+
+./test/test 2 random
+bin/host -emulator
+
+./test/test 2 random
+bin/host -emulator
+
+./test/test 2 random
+bin/host -emulator
